@@ -8,6 +8,9 @@ const app={
     data() {
       return {
         products: [],
+
+        //單一產品資訊
+        tempProduct:{}
       }
     },
 
@@ -19,13 +22,13 @@ const app={
           this.getProducts()
         })
         .catch((err)=>{
-          console.log(err.data);
+          alert("資料有誤，請重新登入")
+          window.location="./index.html"
         })
       },
       getProducts(){
-        axios.get(`${url}/api/${path}/admin/products/all`)
+        axios.get(`${url}/api/${path}/admin/products`)
         .then((res)=>{
-          console.log(res.data.products);
           this.products=res.data.products;
         })
         .catch((err)=>{

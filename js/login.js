@@ -17,12 +17,10 @@ const app={
     //方法
     methods:{
         login(){
-            console.log(this.user);
             axios.post(`${url}/admin/signin`,this.user)
             .then((res)=>{
                 const {token,expired}=res.data;
                 //取出token跟expired
-                console.log(token,expired);
 
                 //將token跟expired存到cookie
                 document.cookie = `mjweek2=${token}; expires=${new Date(expired)};`;
@@ -32,7 +30,11 @@ const app={
 
             })
             .catch((err)=>{
-                console.log(err.data);
+                alert(`${err.data.message}，請重新登入`)
+
+                //登入失敗 轉回登入頁
+                window.location="./index.html"
+
             })
 
         }
