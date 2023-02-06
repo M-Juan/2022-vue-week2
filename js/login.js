@@ -26,14 +26,14 @@ const app={
                 document.cookie = `mjweek2=${token}; expires=${new Date(expired)};`;
 
                 //轉址到第2周頁面
-                window.location="./products.html"
+                window.location="./products.html";
 
             })
             .catch((err)=>{
-                alert(`${err.data.message}，請重新登入`)
+                alert(`${err.data.message}，請重新登入`);
 
                 //登入失敗 轉回登入頁
-                window.location="./index.html"
+                window.location="./index.html";
 
             })
 
@@ -41,7 +41,6 @@ const app={
 
     },
     mounted(){
-        console.log("消波塊");
     }
 
 

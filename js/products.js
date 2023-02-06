@@ -19,11 +19,11 @@ const app={
       checkLogin(){
         axios.post(`${url}/api/user/check`)
         .then((res)=>{
-          this.getProducts()
+          this.getProducts();
         })
         .catch((err)=>{
-          alert("資料有誤，請重新登入")
-          window.location="./index.html"
+          alert("資料有誤，請重新登入");
+          window.location="./index.html";
         })
       },
       getProducts(){
